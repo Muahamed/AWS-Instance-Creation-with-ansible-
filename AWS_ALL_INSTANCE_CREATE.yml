@@ -1,0 +1,55 @@
+`---
+ - hosts: local
+   connection: local
+   gather_facts: no
+   vars_files:
+     - aws/vars/tags.yml	
+     - aws/vars/vpc.yml
+     - aws/vars/ec2_key.yml
+     - aws/vars/collect.yml
+   tasks:
+     - include: aws/tasks/vpc.yml
+     - include: aws/tasks/ec2_key.yml
+     - include: aws/tasks/collect.yml
+     
+
+ - hosts: local
+   connection: local
+   gather_facts: no
+   vars_files:
+     - aws/vars/tags.yml	
+     - aws/vars/vpc.yml
+     - aws/vars/ec2_key.yml
+     - aws/vars/redis.yml
+   tasks:
+     - include: aws/tasks/vpc.yml
+     - include: aws/tasks/ec2_key.yml
+     - include: aws/tasks/redis.yml
+     
+ - hosts: local
+   connection: local
+   gather_facts: no
+   vars_files:
+     - aws/vars/tags.yml	
+     - aws/vars/vpc.yml
+     - aws/vars/ec2_key.yml
+     - aws/vars/control.yml
+   tasks:
+     - include: aws/tasks/vpc.yml
+     - include: aws/tasks/ec2_key.yml
+     - include: aws/tasks/control.yml
+     
+ 
+
+
+     
+
+     
+ 
+
+
+     
+
+
+
+     
